@@ -15,7 +15,7 @@ public class GameView extends View {
 
     Handler handler;
     Runnable r;
-    int fps = 60;
+    int fps = 120;
 
     private final PriorityQueue<Sprite> pqs = new PriorityQueue<Sprite>(100, new Comparator<Sprite>() {
         @Override
@@ -61,7 +61,7 @@ public class GameView extends View {
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        pqs.element().moveX(10);
+        pqs.element().moveX(4);
         for (Sprite x: pqs) {
             canvas.drawBitmap(x.getBm(), x.getX(), x.getY(), null);
         }
